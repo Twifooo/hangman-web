@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Promo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1>{{.Nom}}</h1>
+    <p>Filière : {{.Filiere}}</p>
+    <p>Niveau : {{.Niveau}}</p>
+    <p>Nombre d'étudiants : {{.NbEtudiants}}</p>
+
+    <h2>Liste des étudiants</h2>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Âge</th>
+            <th>Sexe</th>
+        </tr>
+        {{range .ListeEtudiants}}
+        <tr>
+            <td>{{.Nom}}</td>
+            <td>{{.Prenom}}</td>
+            <td>{{.Age}}</td>
+            <td>
+                {{if eq .Sexe "masculin"}}
+                <img src="/static/images/male.png" alt="Masculin" width="20">
+                {{else}}
+                <img src="/static/images/female.png" alt="Féminin" width="20">
+                {{end}}
+            </td>
+        </tr>
+        {{end}}
+    </table>
+</body>
+</html>

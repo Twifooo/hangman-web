@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Change</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .pair { color: green; }
+        .impair { color: red; }
+    </style>
+</head>
+<body>
+    {{if .Pair}}
+    <h1 class="pair">Le nombre de vues est pair : {{.Count}}</h1>
+    {{else}}
+    <h1 class="impair">Le nombre de vues est impair : {{.Count}}</h1>
+    {{end}}
+</body>
+</html>
